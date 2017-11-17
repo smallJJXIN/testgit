@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浴火银河ONLINE|超能时代，获取你的新装备</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/photo.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.js"></script>
+</head>
+
+<body>
+<!--导航-->
+<div class="top_box">
+	<a href="home.html"><img src="images/logo.png" alt="LOGO"></a>
+    <div class="nav_box">
+    	<dl>
+        	<dt>新闻资讯</dt>
+            <dd><a href="news.html">游戏新闻</a></dd>
+            <dd><a href="news.html">活动新闻</a></dd>
+            <dd><a href="news.html">系统公告</a></dd>
+        </dl>
+        <dl>
+        	<dt>游戏资料</dt>
+            <dd><a href="intro.html">游戏介绍</a></dd>
+        </dl>
+        <dl>
+        	<dt>活动专区</dt>
+            <dd><a href="#">礼包兑换</a></dd>
+        </dl>
+        <dl>
+        	<dt>下载中心</dt>
+            <dd><a href="download.html">游戏下载</a></dd>
+            <dd><a href="photo.html">游戏壁纸</a></dd>
+        </dl>
+        <dl>
+        	<dt>账号管理</dt>
+            <dd><a href="pay_page.html">账号充值</a></dd>
+            <dd><a href="#">账号中心</a></dd>
+        </dl>
+        <dl>
+        	<dt>游戏商城</dt>
+            <dd><a href="shop.html">游戏商城</a></dd>
+        </dl>
+        <dl>
+        	<dt>客服专区</dt>
+            <dd><a href="#">客服中心</a></dd>
+        </dl>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="big_box">
+	<ul>
+    	<li>精彩视频</li>
+        <li class="lih">精美壁纸</li>
+        <li>游戏截图</li>
+        <div class="clearfix"></div>
+    </ul>
+    <div class="pictures">
+<!--*******************************1  -->  
+    	<div class="imgs1">
+			<img src="images/pic1_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc1">
+  			<div class="content1"><img src="images/pic1.jpg" /></div>
+		</div>
+		<div class="content_mark1"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************1  -->  
+
+<!--*******************************2  -->  
+    	<div class="imgs2">
+			<img src="images/pic2_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc2">
+  			<div class="content2"><img src="images/pic2.jpg" /></div>
+		</div>
+		<div class="content_mark2"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************2  --> 
+
+<!--*******************************3  -->  
+    	<div class="imgs3">
+			<img src="images/pic3_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc3">
+  			<div class="content3"><img src="images/pic3.jpg" /></div>
+		</div>
+		<div class="content_mark3"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************3  -->  
+
+<!--*******************************4  -->  
+    	<div class="imgs4">
+			<img src="images/pic4_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc4">
+  			<div class="content4"><img src="images/pic4.jpg" /></div>
+		</div>
+		<div class="content_mark4"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************4  --> 
+
+<!--*******************************5  -->  
+    	<div class="imgs5">
+			<img src="images/pic5_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc5">
+  			<div class="content5"><img src="images/pic5.jpg" /></div>
+		</div>
+		<div class="content_mark5"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************5  --> 
+
+<!--*******************************6  -->  
+    	<div class="imgs6">
+			<img src="images/pic6_s.jpg" />
+		</div>
+
+		<!-- 弹出层部分begin -->
+		<div class="zzsc6">
+  			<div class="content6"><img src="images/pic6.jpg" /></div>
+		</div>
+		<div class="content_mark6"></div>
+		<!-- 弹出层部分end -->
+   		<div class="clearfix"></div>
+<!--*******************************4  --> 
+ 
+</div>
+</div>          
+<!--页尾-->
+<div class="buttom">Copyright © 2016-2017 浴火银河Online All Rights Reserved.<br>小米&amp;小姜哥版权所有</div>
+<script>
+	$(".big_box").animate({top:350, opacity:1},1500)
+</script>
+<script>
+	$(".big_box ul li").click(
+		function(){
+			$(".big_box ul li").removeClass("lih")
+			$(this).addClass("lih")
+			}
+	)
+</script>
+<script>
+
+$(function(){
+	$('.imgs1').click(function(){
+		$('.zzsc1').fadeIn(500);
+		$('.content_mark1').show(0);
+	});
+	$('.content_mark1').click(function(){
+		$('.zzsc1').fadeOut(500);
+		$('.content_mark1').hide(0);
+	});
+});
+
+$(function(){
+	$('.imgs2').click(function(){
+		$('.zzsc2').fadeIn(500);
+		$('.content_mark2').show(0);
+	});
+	$('.content_mark2').click(function(){
+		$('.zzsc2').fadeOut(500);
+		$('.content_mark2').hide(0);
+	});
+});
+
+$(function(){
+	$('.imgs3').click(function(){
+		$('.zzsc3').fadeIn(500);
+		$('.content_mark3').show(0);
+	});
+	$('.content_mark3').click(function(){
+		$('.zzsc3').fadeOut(500);
+		$('.content_mark3').hide(0);
+	});
+});
+
+$(function(){
+	$('.imgs4').click(function(){
+		$('.zzsc4').fadeIn(500);
+		$('.content_mark4').show(0);
+	});
+	$('.content_mark4').click(function(){
+		$('.zzsc4').fadeOut(500);
+		$('.content_mark4').hide(0);
+	});
+});
+
+$(function(){
+	$('.imgs5').click(function(){
+		$('.zzsc5').fadeIn(500);
+		$('.content_mark5').show(0);
+	});
+	$('.content_mark5').click(function(){
+		$('.zzsc5').fadeOut(500);
+		$('.content_mark5').hide(0);
+	});
+});
+
+$(function(){
+	$('.imgs6').click(function(){
+		$('.zzsc6').fadeIn(500);
+		$('.content_mark6').show(0);
+	});
+	$('.content_mark6').click(function(){
+		$('.zzsc6').fadeOut(500);
+		$('.content_mark6').hide(0);
+	});
+});
+
+</script>
+</body>
+</html>

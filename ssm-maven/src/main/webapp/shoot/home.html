@@ -1,0 +1,691 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浴火银河ONLINE|超能时代，获取你的新装备</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.js"></script>
+</head>
+
+<body>
+
+<!--导航-->
+<div class="top_box">
+	<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+    <div class="nav_box">
+    	<dl>
+        	<dt>新闻资讯</dt>
+            <dd><a href="news.html">游戏新闻</a></dd>
+            <dd><a href="news.html">活动新闻</a></dd>
+            <dd><a href="news.html">系统公告</a></dd>
+        </dl>
+        <dl>
+        	<dt>游戏资料</dt>
+            <dd><a href="intro.html">游戏介绍</a></dd>
+        </dl>
+        <dl>
+        	<dt>活动专区</dt>
+            <dd><a href="pay_page2.html">礼包兑换</a></dd>
+        </dl>
+        <dl>
+        	<dt>下载中心</dt>
+            <dd><a href="download.html">游戏下载</a></dd>
+            <dd><a href="photo.html">游戏壁纸</a></dd>
+        </dl>
+        <dl>
+        	<dt>账号管理</dt>
+            <dd><a href="pay_page.html">账号充值</a></dd>
+            <dd><a href="#">账号中心</a></dd>
+        </dl>
+        <dl>
+        	<dt>游戏商城</dt>
+            <dd><a href="shop.html">游戏商城</a></dd>
+        </dl>
+        <dl>
+        	<dt>客服专区</dt>
+            <dd><a href="#">客服中心</a></dd>
+        </dl>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="big_box">
+
+	<!--图片轮播-->
+	<div id="flash">
+		<div class="pic_box">
+			<a href="shop.html"><img src="images/banner02.jpg" alt="" /></a>
+			<a href="intro.html"><img src="images/banner02_2.jpg" alt="" /></a>
+			<a href="pay_page.html"><img src="images/banner02_3.jpg" alt="" /></a>
+		</div>
+        <ul>
+			<li class="cur"></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<div class="huakuai"></div>
+	</div>
+<script>
+$(function(){
+	var cur = 0;
+	function autoRun(){//自动轮播函数
+		cur++;
+		// if(cur==7){
+		// 	cur = 0;
+		// }
+		cur = (cur==3)?0:cur;//判断cur是否该变化
+
+		// 变化大图div
+		var left = cur* -702;//计算大图div的left值
+		$('#flash .pic_box').animate({'left':left+'px'},300);//让大图div变换left值
+
+		// 变化小图列表
+		$('#flash ul li').eq(cur).addClass('cur').siblings('li').removeClass('cur');
+
+		// 小滑块
+		//var huakuai_left = cur*42;//计算小滑块的left值
+		// $('#flash .huakuai').animate({'left':huakuai_left+'px'},300);
+		//$('#flash .huakuai').css({'left':huakuai_left+'px'})
+	}
+
+	var timer = setInterval(autoRun,3000);//定时器设立
+
+	$('#flash ul li').mouseover(function(){
+		clearInterval(timer);
+		cur = $(this).index();//获得当前鼠标移入的li的序号
+		// 变化大图div
+		var left = cur* -702;//计算大图div的left值
+		$('#flash .pic_box').stop().animate({'left':left+'px'},300);//让大图div变换left值
+
+		// 变化小图列表
+		$('#flash ul li').eq(cur).addClass('cur').siblings('li').removeClass('cur');
+
+		// 小滑块
+		//var huakuai_left = cur*42;//计算小滑块的left值
+		// $('#flash .huakuai').animate({'left':huakuai_left+'px'},300);
+		//$('#flash .huakuai').css({'left':huakuai_left+'px'})
+	})
+	$('#flash ul li').mouseout(function(){
+		timer = setInterval(autoRun,3000);//定时器设立
+	})
+})
+</script>
+
+	<!--选择栏-->
+	<div class="bot_box">
+    	<div class="shot_bot1" style="float:left"><a href="download.html"><div class="bot_1"><span>游戏下载</span></div></a></div>
+        <div class="shot_bot2" style="float:right"><a href="register.html"><div class="bot_2"><span>账号注册</span></div></a></div>
+        <div class="shot_bot3" style="float:left"><a href="pay_page.html"><div class="bot_3"><span>账号充值</span></div></a></div>
+        <div class="shot_bot4" style="float:right"><a href="pay_page2.html"><div class="bot_4"><span>礼包兑换</span></div></a></div>
+        <div class="long_bot5"><a href="shop.html"><div class="bot_5"><h1>购买僚机</h1><h2>专属僚机来护航</h2></div></a></div>
+        <div class="long_bot6"><a href="intro.html"><div class="bot_5"><h1>新手教程</h1><h2>新舰长速成学院</h2></div></a></div>
+        <div class="clearfix"></div>
+    </div>
+<script>
+	$(".bot_box .shot_bot1").css("background-color","#806114")
+	$(".bot_1").css("background-image","url(images/download_h.png)")
+	$(".bot_box .shot_bot1 span").css("color","#fad680")
+ 	$(".bot_box .shot_bot1").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".bot_1").css("background-image","url(images/download_h.png)")
+			$(".bot_box .shot_bot1 span").css("color","#fad680")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			}
+	)
+	
+	 	$(".bot_box .shot_bot2").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".bot_2").css("background-image","url(images/user_h.png)")
+			$(".bot_box .shot_bot1 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			$(".bot_box .shot_bot2 span").css("color","#fad680")
+			}
+	)
+
+	 	$(".bot_box .shot_bot3").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".bot_3").css("background-image","url(images/cont_h.png)")
+			$(".bot_box .shot_bot1 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			$(".bot_box .shot_bot3 span").css("color","#fad680")
+			}
+	)
+
+	 	$(".bot_box .shot_bot4").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".bot_4").css("background-image","url(images/plant_h.png)")
+			$(".bot_box .shot_bot1 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			$(".bot_box .shot_bot4 span").css("color","#fad680")
+			}
+	)
+
+	 	$(".bot_box .long_bot5").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".long_bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_box .shot_bot1 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot5 h1").css("color","#fad680")
+			$(".bot_box .long_bot5 h2").css("color","#fad680")
+			}
+	)
+
+	 	$(".bot_box .long_bot6").mouseenter(
+		function(){
+			$(this).css("background-color","#806114").siblings().css("background-color","#0f5879")
+			$(".bot_1").css("background-image","url(images/download_s.png)")
+			$(".bot_2").css("background-image","url(images/user_s.png)")
+			$(".bot_3").css("background-image","url(images/cont_s.png)")
+			$(".bot_4").css("background-image","url(images/plant_s.png)")
+			$(".bot_5").css("background-image","url(images/sprite_02.png)")
+			$(".bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".long_bot_6").css("background-image","url(images/sprite_02.png)")
+			$(".bot_box .shot_bot1 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot2 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot3 span").css("color","#cfebf3")
+			$(".bot_box .shot_bot4 span").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot5 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#cfebf3")
+			$(".bot_box .long_bot6 h2").css("color","#01a4ef")
+			$(".bot_box .long_bot6 h1").css("color","#fad680")
+			$(".bot_box .long_bot6 h2").css("color","#fad680")
+			}
+	)
+
+</script>
+
+	<div class="activ_box">
+    	<div class="title_box">&nbsp;&nbsp;活动专区<a href="#">more</a></div>
+        <div class="active1"><img src="images/in_active1.jpg" alt="战友召回"><div class="black_tip">&nbsp;战友召集</div></div>
+        <a href="register.html"><div class="active2"><img src="images/in_active2.jpg" alt="舰长注册通道"><div class="black_tip">&nbsp;舰长注册通道</div></div></a>
+        <a href="pay_page2.html"><div class="active3"><img src="images/in_active3.jpg" alt="忠诚兑换"><div class="black_tip">&nbsp;忠诚兑换</div></div></a>
+        <a href="pay_page.html"><div class="active4"><img src="images/in_active4.jpg" alt="充值反馈"><div class="black_tip">&nbsp;充值反馈</div></div></a>
+    </div>
+    <div class="right_atv">
+    	<div class="title_box2">&nbsp;&nbsp;游戏商城</div>
+        <a href="shop.html"><img src="images/strategy.jpg" alt="游戏商城"></a>
+    </div>
+    
+<!--新闻中心-->
+    <div class="activ_box">
+    	<div class="title_box">&nbsp;&nbsp;新闻中心<a href="news.html">more</a></div>
+        <ul>
+        	<li class="news_bot1"><div class="black_box"></div><img src="images/genetal_h.png" alt="综合" style="display:block"></li>
+            <li class="news_bot2"><div class="black_box"></div><img src="images/news_h.png" alt="新闻" style="display:none"></li>
+            <li class="news_bot3"><div class="black_box"></div><img src="images/event_h.png" alt="活动" style="display:none"></li>
+            <li class="news_bot4"><div class="black_box"></div><img src="images/bulletin_h.png" alt="公告" style="display:none"></li>
+        </ul>
+        
+     <div class="news_text">
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <a href="news_page2.html"><div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div></a>
+            <div class="texts">
+            <h1>《浴火银河Online》开服送壕礼，英雄武器不停送<a>02/12</a></h1>
+            <span>GOF Online 不限号公测，三大服务器壕礼送不停！</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <a href="news_page1.html"><div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div></a>
+            <div class="texts">
+            <h1>2月21日凌晨6:00开服前维护公告<a>02/21</a></h1>
+            <span>GOF三大服务器上线维护，迎接不限号公测</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+     </div>
+     
+     <div class="news_text2">
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <a href="news_page2.html"><div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div></a>
+            <div class="texts">
+            <h1>《浴火银河Online》开服送壕礼，英雄武器不停送<a>02/12</a></h1>
+            <span>GOF Online 不限号公测，三大服务器壕礼送不停！</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+     </div>
+     
+     <div class="news_text3">
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <a href="news_page2.html"><div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div></a>
+            <div class="texts">
+            <h1>《浴火银河Online》开服送壕礼，英雄武器不停送<a>02/12</a></h1>
+            <span>GOF Online 不限号公测，三大服务器壕礼送不停！</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new2.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+     </div>
+     
+     <div class="news_text4">
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <a href="news_page1.html"><div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div></a>
+            <div class="texts">
+            <h1>2月21日凌晨6:00开服前维护公告<a>02/21</a></h1>
+            <span>GOF三大服务器上线维护，迎接不限号公测</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+        <div class="news">
+            <img src="images/in_new1.jpg" alt="新闻">
+            <div class="mor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看详情</div>
+            <div class="texts">
+            <h1>NULL<a>00/00</a></h1>
+            <span>NULL</span>
+            </div>
+        </div>
+     </div>
+     
+<script>
+	$(".news_text2").hide()
+	$(".news_text3").hide()
+	$(".news_text4").hide()
+	$(".news_bot1").click(
+		function(){
+			$(".news_text").fadeIn()
+			$(".news_text2").hide()
+			$(".news_text3").hide()
+			$(".news_text4").hide()
+			}
+	)
+	$(".news_bot2").click(
+		function(){
+			$(".news_text2").fadeIn()
+			$(".news_text").hide()
+			$(".news_text3").hide()
+			$(".news_text4").hide()
+			}
+	)
+	$(".news_bot3").click(
+		function(){
+			$(".news_text3").fadeIn()
+			$(".news_text2").hide()
+			$(".news_text").hide()
+			$(".news_text4").hide()
+			}
+	)
+	$(".news_bot4").click(
+		function(){
+			$(".news_text4").fadeIn()
+			$(".news_text2").hide()
+			$(".news_text3").hide()
+			$(".news_text").hide()
+			}
+	)
+	
+	
+	$(".activ_box .active1").mouseenter(
+		function(){
+			$(this).children(".black_tip").css("color","#fff")
+			}
+	)
+	$(".activ_box .active1").mouseleave(
+		function(){
+			$(this).children(".black_tip").css("color","#00aeff")
+			}
+	)
+	
+	$(".activ_box .active2").mouseenter(
+		function(){
+			$(this).children(".black_tip").css("color","#fff")
+			}
+	)
+	$(".activ_box .active2").mouseleave(
+		function(){
+			$(this).children(".black_tip").css("color","#00aeff")
+			}
+	)
+	
+	$(".activ_box .active3").mouseenter(
+		function(){
+			$(this).children(".black_tip").css("color","#fff")
+			}
+	)
+	$(".activ_box .active3").mouseleave(
+		function(){
+			$(this).children(".black_tip").css("color","#00aeff")
+			}
+	)
+	
+	$(".activ_box .active4").mouseenter(
+		function(){
+			$(this).children(".black_tip").css("color","#fff")
+			}
+	)
+	$(".activ_box .active4").mouseleave(
+		function(){
+			$(this).children(".black_tip").css("color","#00aeff")
+			}
+	)
+
+</script>
+
+	</div>
+    <div class="right_atv" style="margin-top:-80px;">
+            <div class="title_box2">&nbsp;&nbsp;游戏特色</div>
+            <a href="intro.html"><img src="images/features.jpg" alt="游戏特色"></a>
+    </div>
+    <div class="right_atv" style="margin-top:8px">
+           <div class="title_box2">&nbsp;&nbsp;游戏壁纸</div>
+           <a href="photo.html"><img src="images/video.jpg" alt="游戏壁纸"></a>
+    </div>
+    <div class="right_box">
+        <p>本游戏适合15周岁以上人群<br>未满15周岁请在家长监督下进行</p>
+    </div>
+<div class="clearfix"></div>
+</div>
+<script>
+	$(".big_box").animate({top:350, opacity:1},1500)
+</script>
+<script>
+	$(".news_bot1").mouseenter(
+		function(){
+			$(".news_bot1").css("background-image","url(images/genetal_s.png)")
+			$(".news_bot1 .black_box").stop().animate({left:0},500)
+		}
+	)
+	$(".news_bot1").mouseleave(
+		function(){
+			
+			$(".news_bot1").css("background-image","url(images/genetal.png)")
+			$(".news_bot1 .black_box").animate({left:-174},1)
+		}
+	)
+	
+	$(".news_bot2").mouseenter(
+		function(){
+			$(".news_bot2").css("background-image","url(images/news_s.png)")
+			$(".news_bot2 .black_box").stop().animate({left:0},500)
+		}
+	)
+	$(".news_bot2").mouseleave(
+		function(){
+			
+			$(".news_bot2").css("background-image","url(images/news.png)")
+			$(".news_bot2 .black_box").animate({left:-174},1)
+		}
+	)
+	
+	$(".news_bot3").mouseenter(
+		function(){
+			$(".news_bot3").css("background-image","url(images/event_s.png)")
+			$(".news_bot3 .black_box").stop().animate({left:0},500)
+		}
+	)
+	$(".news_bot3").mouseleave(
+		function(){
+			
+			$(".news_bot3").css("background-image","url(images/event.png)")
+			$(".news_bot3 .black_box").animate({left:-174},1)
+		}
+	)
+	
+	$(".news_bot4").mouseenter(
+		function(){
+			$(".news_bot4").css("background-image","url(images/bulletin_s.png)")
+			$(".news_bot4 .black_box").stop().animate({left:0},500)
+		}
+	)
+	$(".news_bot4").mouseleave(
+		function(){
+			
+			$(".news_bot4").css("background-image","url(images/bulletin.png)")
+			$(".news_bot4 .black_box").animate({left:-174},1)
+		}
+	)
+
+
+
+//	$(".news_bot1").css("background-image","url(images/genetal_h.png)")
+	$(".news_bot1").click(
+		function(){
+			$(".news_bot1").children("img").css("display","block")
+			$(".news_bot2").children("img").css("display","none")
+			$(".news_bot3").children("img").css("display","none")
+			$(".news_bot4").children("img").css("display","none")
+		}
+	)
+	$(".news_bot2").click(
+		function(){
+			$(".news_bot2").children("img").css("display","block")
+			$(".news_bot1").children("img").css("display","none")
+			$(".news_bot3").children("img").css("display","none")
+			$(".news_bot4").children("img").css("display","none")
+		}
+	)
+	$(".news_bot3").click(
+		function(){
+			$(".news_bot3").children("img").css("display","block")
+			$(".news_bot1").children("img").css("display","none")
+			$(".news_bot2").children("img").css("display","none")
+			$(".news_bot4").children("img").css("display","none")
+		}
+	)
+	$(".news_bot4").click(
+		function(){
+			$(".news_bot4").children("img").css("display","block")
+			$(".news_bot1").children("img").css("display","none")
+			$(".news_bot2").children("img").css("display","none")
+			$(".news_bot3").children("img").css("display","none")
+		}
+	)
+	
+</script>
+
+<!--页尾-->
+<div class="buttom">Copyright © 2016-2017 浴火银河Online All Rights Reserved.<br>小米&amp;小姜哥版权所有</div>
+
+</body>
+</html>

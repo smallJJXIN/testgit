@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*重置CSS样式*/
+*{ font-family:"微软雅黑";}
+body{ margin:0; padding:0;}
+ul,p{ margin:0; padding:0;}
+li{ list-style:none;}
+a{ text-decoration:none; outline:none;}
+input{ border:none; background:none; outline:none; margin:0; padding:0;}
+dd,dl{ margin:0; padding:0; list-style:none;}
+table{ margin:0; padding:0; list-style:none;}
+h1,h2,h3,h4{ margin:0; padding:0;}
+
+.clearfix{ clear:both;}

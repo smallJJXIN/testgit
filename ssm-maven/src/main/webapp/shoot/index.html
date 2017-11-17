@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浴火银河ONLINE|超能时代，获取你的新装备</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.js"></script>
+	<style>
+@keyframes play{
+	from{ transform:rotate(0deg);}
+	to{transform:rotate(180deg); transform-origin:40px 40px;}
+}
+@-webkit-keyframes play{
+	from{ -webkit-transform:rotate(0deg);}
+	to{ -webkit-transform:rotate(180deg); -webkit-transform-origin:40px 40px;}
+}
+	/* Style for our header texts
+	* --------------------------------------- */
+	.black{
+		width:554.7px;
+		height:312.6px;
+		background-color:#000;
+		opacity:0.4;
+		position:absolute;
+		bottom:3px;
+		right:0px;
+		z-index:9;
+		
+	}
+	h2{
+		position:absolute;
+		bottom:120px;
+		right:240px;
+		z-index:15;
+		cursor:pointer;
+		width:80px;
+		height:80px;
+	}
+	h3{
+		position:absolute;
+		bottom:120px;
+		right:240px;
+		z-index:12;
+		opacity:0.4;
+		cursor:pointer;
+	}
+	.h3h{ 
+			animation-name:play;
+			animation-direction:alternate;
+			animation-duration: 1s;
+			-webkit-animation-name:play;
+			-webkit-animation-direction:alternate;
+			-webkit-animation-duration: 1s;
+			}
+	
+	h4{
+		position:absolute;
+		bottom:120px;
+		right:240px;
+		z-index:11;
+		opacity:0.4;
+		cursor:pointer;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		height:312px;
+		overflow:hidden;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+	</style>
+</head>
+
+<body>
+<div class="b_box">
+	<a href="home.html"><div class="logo">LOGO</div></a>
+    <img src="images/ads.png" alt="文字" class="title"> 
+   	<img src="images/register.png" alt="5秒快速注册" class="register">
+    <div class="main_box">
+    <div class="button_box">
+        <a href="home.html"><div class="button"><h1>进入官网</h1><span>ENTER</span><div class="width_box"></div></div></a>
+        <a href="download.html"><div class="button"><h1>游戏下载</h1><span>DOWNLOAD</span><div class="width_box"></div></div></a>
+        <a href="register.html"><div class="button"><h1>账号注册</h1><span>REGISTER</span><div class="width_box"></div></div></a>
+        <a href="pay_page.html"><div class="button"><h1>账号充值</h1><span>PAY-FOR</span><div class="width_box"></div></div></a>
+	</div>        
+<!--自动播放视频-->
+
+            <video autoplay loop muted id="myVideo">
+                <source src="video/GOF.mp4" type="video/mp4"></source>
+            </video>
+				<div class="black"></div>
+                <h2></h2>
+                <h3><img src="images/play_1.png" alt="play"></h3>
+                <h4><img src="images/play_2.png" alt="play"></h4>
+
+
+	</div>
+    <div class="clearfix"></div>
+</div>
+<div class="buttom">Copyright © 2016-2017 浴火银河Online All Rights Reserved.<br>小米&amp;小姜哥版权所有</div>
+
+
+<script>
+	$(".button").mouseenter(
+		function(){
+			$(".button").children(".width_box").stop().animate().animate({left:-250},1)
+			$(this).children(".width_box").animate({left:500},500)
+			}
+	)
+	$(".button").mouseleave(
+		function(){
+			$(this).children(".width_box").animate({left:-250},1)
+			}
+	)
+	$(".title").animate({right:250,opacity:1},1000)
+	$(".main_box").animate({right:260,opacity:1},1000)
+	$("h2").mouseenter(
+		function(){
+			$(".black").stop().fadeOut()
+			$("h3").stop().addClass("h3h").fadeOut(1000)
+			$("h4").stop().fadeOut(1000)
+			}
+	)
+	$("h2").mouseleave(
+		function(){
+			$(".black").fadeIn()
+			$("h3").addClass("h3h").fadeIn(1000,
+				function(){
+					$("h3").removeClass("h3h").fadeIn()
+					}
+			)
+			$("h4").fadeIn()
+			}
+	)
+</script>
+</body>
+</html>

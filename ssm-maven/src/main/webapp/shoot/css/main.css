@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{ background:url(../images/bd_bg.jpg) no-repeat top center; background-color:#000;}
+.b_box{
+	width:1400px;
+	height:900px;
+	position:relative;
+	margin:0 auto;
+}
+.b_box .logo{ 
+	background-image:url(../images/logo.png);
+	width:209px;
+	height:95px;
+	text-indent:-9999px;
+	position:absolute;
+	top:50px;
+	left:150px;
+}
+.b_box .main_box{
+	width:808px;
+	position:absolute;
+	top:500px;
+	right:120px;
+	opacity:0;
+}
+.b_box .button_box{
+	width:250px;
+	float:left;
+}
+.b_box .button_box .button{
+	background-image:url(../images/bot.png);
+	background-repeat:no-repeat;
+	width:250px;
+	height:75px;
+	cursor:pointer;
+	margin-bottom:3.9px;
+	position:relative;
+	overflow:hidden;
+}
+.b_box .button_box .button .width_box{
+	width:250px;
+	height:75px;
+	background-color:#8ddffc;
+	position:absolute;
+	top:0;
+	left:-250px;
+	opacity:0.3;
+}
+.b_box .button_box .button h1{
+	color:#fff;
+	font-size:26px;
+	font-weight:bold;
+	text-align:center;
+	line-height:50px;
+}
+.b_box .button_box .button span{
+	font-size:14px;
+	font-weight:bold;
+	color:#6291b3;
+	width:90px;
+	display:block;
+	text-align:center;
+	margin:0 auto;
+}
+.b_box .title{ 
+	position:absolute;
+	top:170px;
+	right:120px;
+	opacity:0;
+}
+.b_box .register{
+	position:fixed;
+	right:0;
+	top:300px;
+}
+.buttom{
+	color:#bcbec2;
+	font-size:12px;
+	width:1000px;
+	margin:0 auto;
+	text-align:center;
+}
