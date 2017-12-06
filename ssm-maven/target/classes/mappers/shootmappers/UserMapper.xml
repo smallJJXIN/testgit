@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjx.shoot.core.dao.UserDao">
+    <resultMap type="User" id="UserResult">
+	    <result property="userId" column="userId"/>
+	    <result property="username" column="username"/>
+	    <result property="password" column="password"/>
+	    <result property="telephone" column="telephone"/>
+		<result property="email" column="email"/>
+	    <result property="userToken" column="userToken"/>
+	    <result property="userType" column="userType"/>
+    </resultMap>
+    
+    <insert id="addUser" parameterType="User">
+        insert into user(userId,username,password ,telephone,email,userToken,userType)
+        values(#{userId},#{username},#{password },#{telephone},#{email},#{userToken},#{userType})
+    </insert>
+    
+    <select id="findByUserInfo" parameterType="User" resultMap="UserResult">
+        select * from user where username=#{username} or telephone = #{telephone} or email = #{email} limit 1
+    </select>
+   <!-- 颁发令牌 --> 
+    <update id="setToken" parameterType = "User">
+        update user set userToken = #{userToken} where username = #{username}
+    </update>
+</mapper>

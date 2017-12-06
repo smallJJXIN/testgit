@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.jjx.shoot.core.dao.DownloadDao">
+    <resultMap type="Download" id="DownloadResult">
+	    <result property="id" column="id"/>
+	    <result property="type" column="type"/>
+	    <result property="version" column="version"/>
+	    <result property="name" column="name"/>
+		<result property="extent" column="extent"/>
+    </resultMap>
+        
+    <select id="findDownload" parameterType="Map" resultMap="DownloadResult">
+        select * from download 
+        <where>
+           type &gt;=#{userType} 
+        </where>
+    </select>
+    
+    
+</mapper>        
