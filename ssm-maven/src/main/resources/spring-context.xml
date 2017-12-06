@@ -6,8 +6,8 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <!-- 自动扫描 -->
-    <context:component-scan base-package="com.ssm.maven.core.dao"/>
-    <context:component-scan base-package="com.ssm.maven.core.service"/>
+    <context:component-scan base-package="com.jjx.shoot.core"/>
+    
 
     <!-- druid监控配置 -->
     <import resource="classpath:spring-context-druid-stat.xml"/>

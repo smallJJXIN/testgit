@@ -61,10 +61,13 @@ body{ background:url(../images/register_body121015.jpg) no-repeat top center; ba
 	box-shadow:0 0 0 #97b9f0;
 	transition:box-shadow 1s;
 }
+
+
+
 .register_box input:focus{
 	box-shadow:0 0 2px #009BFF;
 }
-.register_box .list_box p{
+.register_box .list_box P{
 	font-size:12px;
 	position:absolute;
 	left:160px;

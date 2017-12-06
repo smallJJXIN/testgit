@@ -44,7 +44,7 @@
     <!-- 配置事务切面 -->
     <aop:config>
         <aop:pointcut id="serviceOperation"
-                      expression="(execution(* com.ssm.maven.core.service.*.*(..)))"/>
+                      expression="(execution(* com.jjx.shoot.core.service.*.*(..)))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
     </aop:config>
 

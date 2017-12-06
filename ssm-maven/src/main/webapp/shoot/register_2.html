@@ -6,7 +6,20 @@
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="css/register_login2.css" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
+<script type="text/javascript" src = "js/value.js"></script>
 </head>
+
+<script type = "text/javascript">
+$(document).ready(function() {  
+    flushValidateCode();    //进入页面就刷新生成验证码  
+});
+
+function login(){
+	
+}
+	
+</script>
+
 
 <body>
 <div class="head_box">
@@ -21,9 +34,10 @@
                 密码:<input type="text" style="margin-left:68px;">
             </div>
             <div class="name_box" style="font-size:12px; width:365px;">
+            	<img id="codeValidateImg" class="register_box" style = "margin:20px 125px -12px 109px;width:95px;height:36px;cursor:pointer" onclick = "flushValidateCode()"/><br/>
             	请输入验证码:<input type="text" style="width:80px; margin-left:30px;"><br>
                 <a href="register_found.html">忘记密码？点击找回&gt;&gt;</a><br>
-            	<input type="submit" value="登录" class="go">           
+            	<input type="submit" value="登录" class="go" onclick = "checkValidateCode(this)">           
             </div>
         </div>
         <div class="head_box">

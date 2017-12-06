@@ -1,11 +1,60 @@
-<!doctype html>
+<!DOCTYPE>
 <html>
 <head>
 <meta charset="utf-8">
 <title>浴火银河ONLINE|超能时代，获取你的新装备</title>
+<style type = "text/css">
+	.checkP{
+		color:red;
+	}
+	
+	#checkUserName{
+		font-size:12px;
+		position:absolute;
+		left:160px;
+		top:190px;
+	}
+	
+	#checkPwd{
+		font-size:12px;
+		position:absolute;
+		left:160px;
+		top:340px;
+	}
+	
+	#checkValidate{
+		font-size:12px;
+		position:absolute;
+		left:290px;
+		top:642px;
+	}
+	
+	#checkEmail{
+		font-size:12px;
+		position:absolute;
+		left:420px;
+		top:519px;
+	}
+	#checkPhone{
+		font-size:12px;
+		position:absolute;
+		left:420px;
+		top:442px;
+	}
+</style>
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="css/register.css" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
+<script type="text/javascript" src = "js/value.js"></script>
+<script type = "text/javascript">
+/**
+ * 后绑定事件 进入页面需要干的活
+ */
+$(document).ready(function() {  
+    flushValidateCode();    //进入页面就刷新生成验证码  
+}); 
+</script>
+
 </head>
 
 <body>
@@ -17,23 +66,33 @@
             <h1>注册信息</h1>
             <h2>浴火银河Oline 舰长通行证</h2>
             <div class="list_box">
-            	通行证账号:<input type="text">
-                <p>账号以字母开头，由小写英文字母和数字组成的4-16位字符</p>
-                密码:<input type="text" style="margin-left:68px">
-                密码确认:<input type="text" style="margin-left:36px">
+            	通行证账号:<input id = "username" type="text">
+                <p id = "checkUserName" class = "checkP"></p>
+                密码:<input type="password" id = "rePwd1" style="margin-left:68px">
+                密码确认:<input type="password" id = "rePwd2" style="margin-left:36px" />
+           <p id = "checkPwd" class = "checkP"></p>
             </div>
             <div class="name_box">
-        		<h3>以下信息用于防沉迷系统</h3>
-                真实姓名:<input type="text" style="margin-left:36px"><br>
-            	身份证号码:<input type="text">
+        		<h3>以下信息用于为非必填选项</h3>
+                手机号:<input type="text" id = "telephone" style="margin-left:53px">
+                <p id = "checkPhone" class = "checkP"></p>
+                <br>
+            	邮箱:<input type="text" id = "email" style="margin-left:68px">
+            	<p id = "checkEmail" class = "checkP"></p>
+            	
         	</div>
             <div class="name_box" style="border-bottom:1px solid #c6c6c6;">
-            	请输入验证码:<input type="text" style="width:80px">
+            
+            <img id="codeValidateImg" class="register_box" style = "margin:20px 125px 0px 125px;width:95px;height:36px;cursor:pointer" onclick = "flushValidateCode()"/><br/>
+            	请输入验证码:<input type="text" id = "ValiCode" style="margin:5px 20px 20px 20px;width:80px">
+            	<p id = "checkValidate" class = "checkP"></p>
+            	
             </div>
             <div class="name_box" style="font-size:12px; border-top:1px solid #fff;">
-            	<input type="checkbox" style="width:12px; height:12px; margin:0; margin:30px 5px;">我已经阅读并同意《最终用户而协议》<br>
+            	<input type="checkbox" id = "checkF" style="width:12px; height:12px; margin:0; margin:30px 5px;">我已经阅读并同意《最终用户协议》<br>
                 <a href="register_2.html">已经有账号？立即登录&gt;&gt;</a><br>
-            	<input type="submit" value="提交并注册" class="go">           
+                <!-- <input type = "hidden" name="token" value="${token}" /> -->
+            	<input type="button" style = "margin-top:12px" value="提交并注册" class="go" id = "commitRe" onclick = "checkValidateCode(this)" />  
             </div>
         </div>
         <div class="head_box">

@@ -8,6 +8,27 @@
 <script src="js/jquery.js"></script>
 </head>
 
+<script type = "text/javascript">
+$(document).ready(function() {  
+    	flushValidateCode();    //进入页面就刷新生成验证码  
+});
+
+	function getDownZy(){
+		$.ajax({
+			type:"get",
+			url:url+"shoot/download/getGameList.do",
+			
+			
+		});
+	}
+	function downloadGame(){
+		//var id = data.value;
+		window.location.href = url + "shoot/download/game.do";
+	
+	}
+	
+	
+</script>
 <body>
 <!--导航-->
 <div class="top_box">
@@ -231,13 +252,7 @@
             <li class="fen05">备注</li>
             <div class="clearfix"></div>
         </ul>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.010.0至0.010.3</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.009.9至0.010.3</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.009.8至0.010.3</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.009.3至0.009.5</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.008.8至0.009.1</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.006.2至0.008.2</span>
-        <span>2017/02/21　　<a href="#">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.005.3至0.005.5</span>
+        <span>2017/02/21　　<a onclick = "downloadGame()">点击下载</a>　　35.3MB　b5b102e28f54a94e616aa02cbf9d4387   0.010.0至0.010.3</span>
         </div>
         <div class="download_title">下载安装FAQ</div>
         <h4>
@@ -246,7 +261,7 @@
         </h4>
         <h4>
         -为什么我的客户端运行报错？<br>
-        -您好！我们的哭护短目前只兼容Windows 7以上的版本，请您升级您的系统。
+        -您好！我们的目前只兼容Windows 7以上的版本，请您升级您的系统。
         </h4>
     </div>
 </div>
